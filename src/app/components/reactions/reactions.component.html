@@ -1,6 +1,3 @@
-<mat-button-toggle-group class="reaction-icons flex justify-between">
-    <mat-button-toggle class="reaction-icon p-2 rounded-full hover:bg-sky-200 focus:outline-none">&#128077;</mat-button-toggle>
-    <mat-button-toggle class="reaction-icon p-2 rounded-full hover:bg-sky-200 focus:outline-none">&#128078;</mat-button-toggle>
-    <mat-button-toggle class="reaction-icon p-2 rounded-full hover:bg-sky-200 focus:outline-none">&#128079;</mat-button-toggle>
-    <mat-button-toggle class="reaction-icon p-2 rounded-full hover:bg-sky-200 focus:outline-none">&#128148;</mat-button-toggle>
+<mat-button-toggle-group multiple *ngFor="let emoji of emojis" class="h-auto">
+    <app-reaction [emoji]="emoji"></app-reaction>
 </mat-button-toggle-group>

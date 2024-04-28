@@ -5,9 +5,11 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\message",
+    "\\src\\app\\components\\reaction",
     "\\src\\app\\components\\reactions",
+    "\\src\\app\\services",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\components\\message",
+  "SelectedNode": "\\src\\app\\components\\message\\message.component.html",
   "PreviewInSolutionExplorer": false
 }

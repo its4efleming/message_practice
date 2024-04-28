@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactionsService } from '../../services/reactions.service';
-
-export interface Emoji {
-  name: string;
-  icon: string;
-}
+import { Emoji } from '../../models/emoji.model';
 
 @Component({
   selector: 'app-reaction',

@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\message",
     "\\src\\app\\components\\reaction",
+    "\\src\\app\\components\\reaction-badge",
     "\\src\\app\\components\\reactions",
+    "\\src\\app\\models",
     "\\src\\app\\services",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\components\\message\\message.component.html",
+  "SelectedNode": "\\src\\app\\components\\message\\message.component.ts",
   "PreviewInSolutionExplorer": false
 }

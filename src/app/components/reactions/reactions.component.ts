@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { ReactionComponent, Emoji } from '../reaction/reaction.component';
+import { ReactionComponent } from '../reaction/reaction.component';
+import { Emoji } from '../../models/emoji.model';
 
 
 @Component({

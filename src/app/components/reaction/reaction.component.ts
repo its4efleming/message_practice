@@ -1,26 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges,SimpleChange } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { ReactionsService } from '../../services/reactions.service';
 import { Emoji } from '../../models/emoji.model';
 
 @Component({
   selector: 'app-reaction',
   standalone: true,
-  imports: [CommonModule, MatButtonToggleModule, MatIconModule],
+  imports: [CommonModule, MatButtonToggleModule, MatIconModule, MatBadgeModule],
   templateUrl: './reaction.component.html',
   styleUrls: ['./reaction.component.scss']
 })
 export class ReactionComponent {
   @Input() emoji: Emoji | undefined;
+  toggled: boolean | undefined;
   constructor(private reactionsService: ReactionsService) { }
-  isReactionToggled(): boolean {
-    return this.reactionsService.getReactionToggleState(this.emoji?.name || '');
+  ngOnInit() {
+    this.toggled = this.reactionsService.getReactionToggleState(this.emoji);
   }
-
-  toggleReaction(): void {
-    const currentState = this.isReactionToggled();
-    this.reactionsService.setReactionToggleState(this.emoji?.name || '', !currentState);
+  toggledEmoji: Emoji | undefined = this.reactionsService.findToggledEmoji();
+  toggleReaction(): boolean {
+    this.toggled = !this.toggled;
+    this.reactionsService.setReactionToggleState(this.emoji, this.toggled);
+    console.log(this.reactionsService.getReactionToggleState(this.emoji))
+    this.toggledEmoji = this.reactionsService.findToggledEmoji();
+    //this.toggled = this.reactionsService.getReactionToggleState(this.emoji);
+    return this.toggled;
   }
 }

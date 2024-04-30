@@ -1,8 +1,8 @@
-<div class="bg-sky-500 px-4 py-2 text-white group group relative flex w-1/2 justify-center rounded-lg shadow-md transition-colors hover:bg-sky-400 [&>*]:bg-sky-500" style="position: relative;">
-    <app-reaction-badge></app-reaction-badge>
+<div class="group group relative flex w-1/2 justify-center rounded-lg bg-sky-500 px-4 py-2 text-white shadow-md transition-colors hover:bg-sky-400 [&>*]:bg-sky-500" style="position: relative;">
+    <app-reaction-badge [emoji]=mainEmoji></app-reaction-badge>
     <p class="transition-colors group-hover:bg-sky-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <div class="bottom-0 right-0 -mt-2 mr-2 h-8 w-8 absolute rotate-45 transform transition-colors group-hover:bg-sky-400"></div>
-    <div class="bottom-0 left-0 absolute w-auto transform rounded-b-lg opacity-0 transition-colors transition-opacity group-hover:bg-sky-400 group-hover:opacity-100" style="transform: translateY(calc(100% - 6px));">
+    <div class="absolute bottom-0 right-0 -mt-2 mr-2 h-8 w-8 rotate-45 transform transition-colors group-hover:bg-sky-400"></div>
+    <div class="opacity-0 absolute bottom-0 left-0 w-auto transform rounded-b-lg transition-colors transition-opacity group-hover:bg-sky-400 group-hover:opacity-100" style="transform: translateY(calc(100% - 6px));">
         <app-reactions></app-reactions>
     </div>
 </div>

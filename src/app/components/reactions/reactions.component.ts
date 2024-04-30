@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ReactionComponent } from '../reaction/reaction.component';
 import { Emoji } from '../../models/emoji.model';
+import { ReactionsService } from '../../services/reactions.service';
 
 
 @Component({
@@ -13,10 +14,6 @@ import { Emoji } from '../../models/emoji.model';
   styleUrls: ['./reactions.component.scss']
 })
 export class ReactionsComponent {
-  emojis: Emoji[] = [
-    { name: 'ThumbsUp', icon: 'thumb_up' },
-    { name: 'ThumbsDown', icon: 'thumb_down' },
-    { name: 'Smile', icon: 'sentiment_very_satisfied' },
-    { name: 'Frown', icon: 'sentiment_very_dissatisfied'}
-  ];
+  constructor(private reactionsService: ReactionsService) { }
+  emojis = this.reactionsService.getEmojis();
 }

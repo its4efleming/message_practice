@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges,SimpleChange } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges,SimpleChange } from '@angular/core';
+import { signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,12 +22,11 @@ export class ReactionComponent {
     this.toggled = this.reactionsService.getReactionToggleState(this.emoji);
   }
   toggledEmoji: Emoji | undefined = this.reactionsService.findToggledEmoji();
-  toggleReaction(): boolean {
+  toggleReaction(): boolean | undefined {
     this.toggled = !this.toggled;
     this.reactionsService.setReactionToggleState(this.emoji, this.toggled);
-    console.log(this.reactionsService.getReactionToggleState(this.emoji))
-    this.toggledEmoji = this.reactionsService.findToggledEmoji();
-    //this.toggled = this.reactionsService.getReactionToggleState(this.emoji);
-    return this.toggled;
+    //this.toggledEmoji = this.reactionsService.findToggledEmoji();
+    return this.reactionsService.getReactionToggleState(this.emoji);
+    //return this.toggled;
   }
 }

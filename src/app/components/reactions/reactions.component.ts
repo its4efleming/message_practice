@@ -15,5 +15,6 @@ import { ReactionsService } from '../../services/reactions.service';
 })
 export class ReactionsComponent {
   constructor(private reactionsService: ReactionsService) { }
-  emojis = this.reactionsService.getEmojis();
+  emojis: Emoji[] | undefined = this.reactionsService.getEmojis();
+  toggledEmoji: Emoji | undefined = this.reactionsService.findToggledEmoji();
 }

@@ -29,6 +29,11 @@ export class ReactionsService {
       }
     }
     emoji!.toggled = state;
+    this.emojis!.forEach(emoji => {
+      if (emoji.toggled === true) {
+        console.log(emoji.name);
+      }
+    });
   }
 
 }

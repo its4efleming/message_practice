@@ -16,15 +16,13 @@ import { Emoji } from '../../models/emoji.model';
 export class ReactionComponent {
   @Input() emoji: Emoji | undefined;
   toggled: boolean | undefined;
-  toggledEmoji: Emoji | undefined;
   constructor(private reactionsService: ReactionsService, private cd: ChangeDetectorRef) { }
   ngOnInit() {
     this.toggled = this.reactionsService.getReactionToggleState(this.emoji);
-    this.toggledEmoji = this.reactionsService.findToggledEmoji();
   }
   toggleReaction(): boolean | undefined{
-    this.toggled = !this.toggled;
-    this.reactionsService.setReactionToggleState(this.emoji, this.toggled);
+    //this.toggled = !this.toggled;
+    this.reactionsService.setReactionToggleState(this.emoji);
     //this.cd.detectChanges();
     return this.reactionsService.getReactionToggleState(this.emoji);
   }

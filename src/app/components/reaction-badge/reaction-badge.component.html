@@ -1,4 +1,3 @@
-<span matBadge *ngIf="emoji">
-    <mat-icon>{{emoji.icon}}</mat-icon>
+<span matBadge matBadgePosition="above after" *ngIf="emoji">
+    <mat-icon class="!bg-transparent">{{emoji.icon}}</mat-icon>
 </span>
-<!--*ngFor="let emoji in emojis"-->

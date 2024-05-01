@@ -15,4 +15,7 @@ import { ReactionsService } from '../../services/reactions.service';
 export class ReactionBadgeComponent {
   @Input() emoji: Emoji | undefined;
   constructor(private reactionsService: ReactionsService) { }
+  ngOnInit(){
+    this.emoji = this.reactionsService.findToggledEmoji();
+  }
 }

@@ -11,6 +11,7 @@ export class ReactionsService {
     { name: 'Smile', icon: 'sentiment_very_satisfied', toggled: false },
     { name: 'Frown', icon: 'sentiment_very_dissatisfied', toggled: false }
   ];
+  toggledEmoji: Emoji | undefined;
   constructor() { }
   getEmojis(): Emoji[] | undefined {
     return this.emojis;
@@ -22,13 +23,12 @@ export class ReactionsService {
     const foundEmoji = this.emojis?.find(e => e.name === emoji?.name);
     return foundEmoji?.toggled;
   }
-  setReactionToggleState(emoji: Emoji | undefined, state: boolean | undefined): void {
-    if(this.emojis){
-      for (var i = 0; i < this.emojis?.length; i++){
-        this.emojis[i].toggled = false;
-      }
+  setReactionToggleState(emoji: Emoji | undefined): void {
+    this.toggledEmoji = this.findToggledEmoji();
+    if(this.toggledEmoji && this.toggledEmoji != emoji){
+      this.toggledEmoji.toggled = false;
     }
-    emoji!.toggled = state;
+    emoji!.toggled = !emoji!.toggled;
     this.emojis!.forEach(emoji => {
       if (emoji.toggled === true) {
         console.log(emoji.name);
